@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horganizer — File organization for people who are done sorting Downloads by hand</title>
+<meta name="description" content="Horganizer automatically organizes your files, watches your folders, finds duplicates and lets you investigate any file in detail. Horganizer PRO is a one-time purchase.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230F141C%22/><path d=%22M25 35h20l8 10h22a5 5 0 0 1 5 5v20a5 5 0 0 1-5 5H25a5 5 0 0 1-5-5V40a5 5 0 0 1 5-5z%22 fill=%22%233B9CCB%22/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 7.5C3 6.12 4.12 5 5.5 5h4.4c.6 0 1.16.28 1.53.75L12.7 7.5H18.5C19.88 7.5 21 8.62 21 10v7c0 1.38-1.12 2.5-2.5 2.5h-13C4.12 19.5 3 18.38 3 17V7.5z" fill="#3B9CCB"/></svg>
+      </span>
+      <span class="brand-text">Horganizer</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#pro">PRO</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="#pricing" class="btn btn-primary btn-small">Get Horganizer PRO</a>
+    </div>
+
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#pro">PRO</a>
+    <a href="#faq">FAQ</a>
+    <a href="#pricing" class="btn btn-primary btn-small">Get Horganizer PRO</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span>Horganizer PRO • Windows desktop app</p>
+        <h1>Your files shouldn't<br>be a mess.</h1>
+        <p class="hero-sub">Horganizer turns a scattered Downloads folder, duplicate files and constantly
+          changing directories into a system that stays organized — automatically, and on your terms.</p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn btn-primary btn-large">Get Horganizer PRO</a>
+          <a href="#how-it-works" class="btn btn-ghost btn-large">See how it works <i class="fa-solid fa-arrow-down-long"></i></a>
+        </div>
+        <ul class="hero-meta">
+          <li><i class="fa-regular fa-square-check"></i> One-time purchase, no subscription</li>
+          <li><i class="fa-regular fa-square-check"></i> Runs locally on your machine</li>
+          <li><i class="fa-regular fa-square-check"></i> 10 interface languages</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="mini-window">
+          <div class="mini-titlebar">
+            <span class="mini-dot"></span><span class="mini-dot"></span><span class="mini-dot"></span>
+            <span class="mini-title">Horganizer</span>
+          </div>
+          <div class="mini-header">
+            <div>
+              <div class="mini-h1">Horganizer</div>
+              <div class="mini-h2">Automated Downloads &amp; Directory Organizer</div>
+            </div>
+            <div class="mini-badge"><span class="badge-dot"></span>Desktop Suite v2.0.1</div>
+          </div>
+          <div class="mini-tabs">
+            <span class="mini-tab active">Organizing</span>
+            <span class="mini-tab">Own Rules</span>
+            <span class="mini-tab">Auto Monitoring</span>
+            <span class="mini-tab">Duplicates</span>
+            <span class="mini-tab">Investigate</span>
+          </div>
+          <div class="mini-body">
+            <div class="mini-card">
+              <div class="mini-icon"><i class="fa-regular fa-folder-open"></i></div>
+              <div>
+                <div class="mini-card-title">Downloads Folder Organizer</div>
+                <div class="mini-card-sub">Target: C:\Users\you\Downloads &nbsp;•&nbsp; 15 built-in categories &amp; custom rules active</div>
+              </div>
+            </div>
+            <div class="mini-actions">
+              <span class="mini-btn mini-btn-primary">Organize Downloads</span>
+              <span class="mini-btn">Restore Files</span>
+            </div>
+            <div class="mini-progress"><div class="mini-progress-fill" id="heroProgressFill"></div></div>
+            <div class="mini-status" id="heroStatus">Ready to organize files.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REAL APP SHOWCASE ============ -->
+  <section class="showcase" id="how-it-works">
+    <div class="container">
+      <p class="section-eyebrow">The actual application</p>
+      <h2 class="section-title">Five tools. One window. Every tab does one job well.</h2>
+      <p class="section-sub">This is the real Horganizer interface — the same tabs, labels and workflow you get after installing it.</p>
+
+      <div class="app-window" id="appWindow">
+        <div class="app-titlebar">
+          <div class="tb-left">
+            <span class="tb-icon"><i class="fa-regular fa-folder-open"></i></span>
+            <span class="tb-name">Horganizer</span>
+          </div>
+          <div class="tb-right">
+            <span class="tb-ctrl">─</span><span class="tb-ctrl">▢</span><span class="tb-ctrl tb-close">×</span>
+          </div>
+        </div>
+
+        <div class="app-header">
+          <div class="app-header-left">
+            <div class="app-title">Horganizer</div>
+            <div class="app-subtitle">Automated Downloads &amp; Directory Organizer</div>
+          </div>
+          <div class="app-header-right">
+            <div class="lang-select"><i class="fa-solid fa-globe"></i><span>English</span><i class="fa-solid fa-chevron-down"></i></div>
+            <div class="version-badge"><span class="badge-dot"></span>Desktop Suite v2.0.1</div>
+          </div>
+        </div>
+
+        <div class="app-tabbar" role="tablist" id="appTabbar">
+          <button class="app-tab active" data-tab="organizing" role="tab">Organizing</button>
+          <button class="app-tab" data-tab="rules" role="tab">Own Rules</button>
+          <button class="app-tab" data-tab="monitoring" role="tab">Auto Monitoring</button>
+          <button class="app-tab" data-tab="duplicates" role="tab">Duplicates Finder</button>
+          <button class="app-tab" data-tab="investigate" role="tab">Investigate</button>
+        </div>
+
+        <div class="app-content">
+
+          <!-- ORGANIZING PANEL -->
+          <div class="app-panel active" data-panel="organizing">
+            <div class="panel-card panel-card-row">
+              <div class="panel-icon"><i class="fa-regular fa-folder-open"></i></div>
+              <div>
+                <div class="panel-card-title">Downloads Folder Organizer</div>
+                <div class="panel-card-sub">Target: C:\Users\you\Downloads &nbsp;•&nbsp; 15 built-in file categories &amp; custom rules active</div>
+              </div>
+            </div>
+
+            <div class="panel-card">
+              <div class="panel-label">Quick Actions</div>
+              <div class="panel-row-buttons">
+                <button class="ui-btn ui-btn-primary" id="demoOrganizeBtn"><i class="fa-solid fa-broom"></i> Organize Downloads</button>
+                <button class="ui-btn" id="demoRestoreBtn"><i class="fa-solid fa-rotate-left"></i> Restore Files</button>
+              </div>
+            </div>
+
+            <div class="panel-card">
+              <div class="panel-label">Execution Progress</div>
+              <div class="progress-track"><div class="progress-fill" id="demoProgressFill"></div></div>
+              <div class="panel-status" id="demoStatus">Ready to organize files.</div>
+            </div>
+          </div>
+
+          <!-- OWN RULES PANEL -->
+          <div class="app-panel" data-panel="rules">
+            <p class="panel-sub">Rules are evaluated in table order; the first matching enabled rule applies.</p>
+            <div class="panel-card panel-table-card">
+              <table class="ui-table">
+                <thead>
+                  <tr><th>Rule Name</th><th>Extensions</th><th>Destination Folder</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr class="row-selected">
+                    <td>Client Archives</td><td>.zip, .rar, .7z</td><td>D:\Work\Archives</td>
+                    <td><span class="status-pill status-on">Enabled</span></td>
+                  </tr>
+                  <tr>
+                    <td>Design Files</td><td>.psd, .ai, .fig</td><td>D:\Work\Design</td>
+                    <td><span class="status-pill status-on">Enabled</span></td>
+                  </tr>
+                  <tr>
+                    <td>Old Installers</td><td>.exe, .msi</td><td>D:\Archive\Setup Files</td>
+                    <td><span class="status-pill status-off">Disabled</span></td>
+                  </tr>
+                  <tr>
+                    <td>Invoices</td><td>.pdf</td><td>D:\Finance\Invoices</td>
+                    <td><span class="status-pill status-on">Enabled</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="panel-row-buttons panel-toolbar">
+              <button class="ui-btn ui-btn-primary">Add Rule</button>
+              <button class="ui-btn">Edit Rule</button>
+              <button class="ui-btn">Enable</button>
+              <button class="ui-btn">Disable</button>
+              <button class="ui-btn ui-btn-danger" style="margin-left:auto">Delete Rule</button>
+            </div>
+          </div>
+
+          <!-- AUTO MONITORING PANEL -->
+          <div class="app-panel" data-panel="monitoring">
+            <div class="panel-card panel-card-row">
+              <div>
+                <div class="panel-card-title">Background Folder Watchdog</div>
+                <div class="panel-status" id="monitorStatusText">Status: Monitoring active. Watching for new files...</div>
+              </div>
+              <div class="pill pill-active" id="monitorPill" style="margin-left:auto"><span class="pill-dot"></span>MONITORING ACTIVE</div>
+            </div>
+
+            <div class="panel-card">
+              <div class="panel-label">Monitored Folders List</div>
+              <table class="ui-table">
+                <thead><tr><th>Folder Path</th></tr></thead>
+                <tbody>
+                  <tr><td>C:\Users\you\Downloads</td></tr>
+                  <tr><td>D:\Work\Incoming</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="panel-row-buttons panel-toolbar">
+              <button class="ui-btn">Add Folder</button>
+              <button class="ui-btn">Remove Folder</button>
+              <button class="ui-btn ui-btn-primary" style="margin-left:auto">Start Monitoring</button>
+              <button class="ui-btn ui-btn-disabled">Stop Monitoring</button>
+            </div>
+          </div>
+
+          <!-- DUPLICATES FINDER PANEL -->
+          <div class="app-panel" data-panel="duplicates">
+            <div class="panel-card">
+              <div class="panel-label">Target Folders to Scan</div>
+              <table class="ui-table">
+                <thead><tr><th>Folder Path</th></tr></thead>
+                <tbody>
+                  <tr><td>C:\Users\you\Downloads</td></tr>
+                  <tr><td>D:\Photos\Camera Roll</td></tr>
+                </tbody>
+              </table>
+              <div class="panel-row-buttons panel-toolbar" style="padding-top:12px">
+                <button class="ui-btn">Add Folder</button>
+                <button class="ui-btn">Remove Folder</button>
+                <button class="ui-btn">Clear</button>
+                <button class="ui-btn ui-btn-primary" style="margin-left:auto">Scan for Duplicates</button>
+              </div>
+            </div>
+
+            <div class="panel-card">
+              <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+              <div class="panel-status">Scan complete: 4,812 file(s) scanned, 2 duplicate group(s) found.</div>
+            </div>
+
+            <div class="panel-card panel-table-card">
+              <table class="ui-table dup-table">
+                <thead><tr><th>Name / Group</th><th>Full Path</th><th>File Size</th><th>SHA-256 Hash</th></tr></thead>
+                <tbody>
+                  <tr class="group-row"><td colspan="4">Duplicate Group #1 (2 copies)</td></tr>
+                  <tr><td class="indent">invoice_final.pdf</td><td>D:\Work\Incoming\invoice_final.pdf</td><td>184.2 KB</td><td class="mono-cell">9f2a1c…7be0</td></tr>
+                  <tr><td class="indent">invoice_final (1).pdf</td><td>C:\Users\you\Downloads\invoice_final (1).pdf</td><td>184.2 KB</td><td class="mono-cell">9f2a1c…7be0</td></tr>
+                  <tr class="group-row"><td colspan="4">Duplicate Group #2 (3 copies)</td></tr>
+                  <tr><td class="indent">IMG_2291.heic</td><td>D:\Photos\Camera Roll\IMG_2291.heic</td><td>3.1 MB</td><td class="mono-cell">4c88ab…12f4</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="panel-row-buttons">
+              <button class="ui-btn ui-btn-danger"><i class="fa-solid fa-trash"></i> Delete Selected Duplicates</button>
+            </div>
+          </div>
+
+          <!-- INVESTIGATE PANEL -->
+          <div class="app-panel" data-panel="investigate">
+            <div class="panel-card">
+              <div class="panel-card-title">File Inspector &amp; Details</div>
+              <div class="panel-card-sub">Analyze metadata, SHA-256 hash, location history, and duplicates.</div>
+              <div class="panel-row-buttons" style="padding-top:12px">
+                <div class="fake-input">D:\Work\Incoming\invoice_final.pdf</div>
+                <button class="ui-btn ui-btn-primary">Choose File...</button>
+              </div>
+            </div>
+            <div class="panel-card investigate-report">
+<pre>FILE INVESTIGATION
+────────────────────
+Name: invoice_final.pdf
+Size: 184.2 KB
+Type: PDF (Documents/PDF)
+Created: 2026-03-11 09:42:07
+Modified: 2026-03-11 09:42:07
+Hash: 9f2a1cd63e0a7728f6a4d5b0c9e21a3f...7be0
+
+Location history:
+D:
+ → Work
+ → Incoming
+
+Duplicate status:
+⚠ 1 copy/copies found:
+  • C:\Users\you\Downloads\invoice_final (1).pdf</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE PROBLEM ============ -->
+  <section class="problem">
+    <div class="container">
+      <p class="section-eyebrow">The problem</p>
+      <h2 class="section-title">Downloads folders don't stay clean on their own.</h2>
+      <p class="section-sub">Installers, invoices, screenshots, old projects, random archives — they all land
+        in the same place, and nobody sorts them until it's unbearable.</p>
+
+      <div class="ba-grid">
+        <div class="ba-card ba-before">
+          <div class="ba-head"><i class="fa-regular fa-folder"></i> Before Horganizer</div>
+          <ul class="ba-list">
+            <li>setup_v3_final.exe</li>
+            <li>IMG_20260304_1.heic</li>
+            <li>invoice_final (1).pdf</li>
+            <li>invoice_final.pdf</li>
+            <li>project_old_backup.zip</li>
+            <li>notes.txt</li>
+            <li>report (2).docx</li>
+            <li>archive_2024.rar</li>
+          </ul>
+          <div class="ba-tag ba-tag-bad">247 unsorted files</div>
+        </div>
+
+        <div class="ba-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+
+        <div class="ba-card ba-after">
+          <div class="ba-head"><i class="fa-solid fa-folder-tree"></i> After Horganizer</div>
+          <ul class="ba-list ba-list-tree">
+            <li><i class="fa-regular fa-folder"></i> Documents/PDF <span>18 files</span></li>
+            <li><i class="fa-regular fa-folder"></i> Images <span>64 files</span></li>
+            <li><i class="fa-regular fa-folder"></i> Archives <span>12 files</span></li>
+            <li><i class="fa-regular fa-folder"></i> Programs <span>9 files</span></li>
+            <li><i class="fa-regular fa-folder"></i> Code <span>21 files</span></li>
+          </ul>
+          <div class="ba-tag ba-tag-good">2 duplicates flagged</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="features" id="features">
+    <div class="container">
+      <p class="section-eyebrow">Features</p>
+      <h2 class="section-title">Everything a messy file system actually needs.</h2>
+
+      <!-- Feature 1: Organizing -->
+      <div class="feature-row">
+        <div class="feature-copy">
+          <span class="feature-num">01</span>
+          <h3>Organizing</h3>
+          <p>Horganizer sorts files into 15 built-in categories — Images, Videos, Music, Documents
+            (split by PDF, Word, Excel, PowerPoint, Text), Archives, Programs, Libraries, System,
+            Code (by language), Databases, Minecraft, 3D, Books and Games. Anything unrecognized goes to Unknown,
+            not lost.</p>
+          <p class="feature-note">Made a mistake, or just changed your mind? <strong>Restore Files</strong> puts everything back.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="category-flow">
+            <div class="flow-file"><i class="fa-regular fa-file-pdf"></i> invoice.pdf</div>
+            <div class="flow-file"><i class="fa-solid fa-file-zipper"></i> project.zip</div>
+            <div class="flow-file"><i class="fa-regular fa-file-image"></i> photo.heic</div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="flow-folders">
+              <span class="chip"><i class="fa-regular fa-folder"></i> Documents/PDF</span>
+              <span class="chip"><i class="fa-regular fa-folder"></i> Archives</span>
+              <span class="chip"><i class="fa-regular fa-folder"></i> Images</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Own Rules -->
+      <div class="feature-row feature-row-reverse">
+        <div class="feature-copy">
+          <span class="feature-num">02</span>
+          <h3>Own Rules</h3>
+          <p>Built-in categories not enough? Create your own rules by extension and destination folder.
+            Rules are checked in order, top to bottom — the first enabled match wins, so you can layer
+            exceptions on top of the defaults.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="rule-builder">
+            <div class="rule-line"><span class="kw">IF</span> extension <span class="op">=</span> <span class="val">.zip</span></div>
+            <div class="rule-line"><span class="kw">THEN</span> move to <span class="dest">/Archives</span></div>
+            <div class="rule-divider"></div>
+            <div class="rule-line"><span class="kw">IF</span> extension <span class="op">=</span> <span class="val">.psd, .ai</span></div>
+            <div class="rule-line"><span class="kw">THEN</span> move to <span class="dest">D:\Work\Design</span></div>
+            <div class="rule-toggle"><span>Enable Rule</span><span class="toggle on"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Auto Monitoring -->
+      <div class="feature-row">
+        <div class="feature-copy">
+          <span class="feature-num">03</span>
+          <h3>Auto Monitoring</h3>
+          <p>Point Horganizer at any folder and it watches it in the background. When a new file
+            appears, Horganizer waits for it to finish writing to disk, then files it away — no clicking required.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="monitor-timeline" id="monitorTimeline">
+            <div class="tl-step" data-step="1"><span class="tl-dot"></span>NEW FILE DETECTED</div>
+            <div class="tl-connector"></div>
+            <div class="tl-step" data-step="2"><span class="tl-dot"></span>RULE MATCHED</div>
+            <div class="tl-connector"></div>
+            <div class="tl-step" data-step="3"><span class="tl-dot"></span>FILE ORGANIZED</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 4: Duplicates Finder -->
+      <div class="feature-row feature-row-reverse">
+        <div class="feature-copy">
+          <span class="feature-num">04</span>
+          <h3>Duplicates Finder</h3>
+          <p>Scans your chosen folders, groups files by size first, then confirms real duplicates with
+            a SHA-256 hash comparison — so two files are only flagged as duplicates when their content is
+            genuinely identical. Review each group and delete what you don't need.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="dup-card">
+            <div class="dup-card-head">Duplicate Group #1 <span>2 copies</span></div>
+            <div class="dup-card-row"><i class="fa-regular fa-file-pdf"></i> invoice_final.pdf <span class="mono-cell">184.2 KB</span></div>
+            <div class="dup-card-row"><i class="fa-regular fa-file-pdf"></i> invoice_final (1).pdf <span class="mono-cell">184.2 KB</span></div>
+            <div class="dup-card-hash">SHA-256 <span>9f2a1c…7be0</span> — identical on both files</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 5: Investigate -->
+      <div class="feature-row">
+        <div class="feature-copy">
+          <span class="feature-num">05</span>
+          <h3>Investigate</h3>
+          <p>Pick any file and get a full breakdown: name, size, type, created and modified dates,
+            SHA-256 hash, a location history trail, and whether an identical copy exists anywhere else
+            Horganizer knows about.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="inspect-card">
+            <div class="inspect-row"><span>Name</span><span>invoice_final.pdf</span></div>
+            <div class="inspect-row"><span>Size</span><span>184.2 KB</span></div>
+            <div class="inspect-row"><span>Type</span><span>PDF (Documents/PDF)</span></div>
+            <div class="inspect-row"><span>Created</span><span>2026-03-11 09:42:07</span></div>
+            <div class="inspect-row"><span>Modified</span><span>2026-03-11 09:42:07</span></div>
+            <div class="inspect-row"><span>Hash</span><span class="mono-cell">9f2a1c…7be0</span></div>
+            <div class="inspect-row"><span>Location</span><span>D: → Work → Incoming</span></div>
+            <div class="inspect-row"><span>Duplicate status</span><span class="warn-text">⚠ 1 copy found</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ONE APP, FIVE TOOLS ============ -->
+  <section class="pipeline">
+    <div class="container">
+      <p class="section-eyebrow">One app, five tools</p>
+      <h2 class="section-title">Not a one-time sort. A system you keep running.</h2>
+      <div class="pipeline-flow">
+        <div class="pipe-step"><i class="fa-solid fa-broom"></i><span>Organize</span></div>
+        <div class="pipe-line"></div>
+        <div class="pipe-step"><i class="fa-solid fa-eye"></i><span>Monitor</span></div>
+        <div class="pipe-line"></div>
+        <div class="pipe-step"><i class="fa-solid fa-clone"></i><span>Detect</span></div>
+        <div class="pipe-line"></div>
+        <div class="pipe-step"><i class="fa-solid fa-magnifying-glass"></i><span>Investigate</span></div>
+        <div class="pipe-line"></div>
+        <div class="pipe-step"><i class="fa-solid fa-shield-halved"></i><span>Maintain</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRO ============ -->
+  <section class="pro" id="pro">
+    <div class="container pro-inner">
+      <div class="pro-copy">
+        <p class="section-eyebrow">Horganizer PRO</p>
+        <h2 class="section-title">Everything you need to take control of your files.</h2>
+        <p class="section-sub">PRO is the full Horganizer experience — every tool, unlocked, forever.</p>
+        <ul class="pro-checklist">
+          <li><i class="fa-solid fa-check"></i> Organizing — 15 built-in categories</li>
+          <li><i class="fa-solid fa-check"></i> Own Rules — unlimited custom rules</li>
+          <li><i class="fa-solid fa-check"></i> Auto Monitoring — background folder watching</li>
+          <li><i class="fa-solid fa-check"></i> Duplicates Finder — hash-verified matches</li>
+          <li><i class="fa-solid fa-check"></i> Investigate — full file inspection</li>
+        </ul>
+        <a href="#pricing" class="btn btn-primary btn-large">Get Horganizer PRO</a>
+      </div>
+      <div class="pro-visual" aria-hidden="true">
+        <div class="pro-window">
+          <div class="pro-window-row"><i class="fa-solid fa-broom"></i> Organizing<span class="check-ok"><i class="fa-solid fa-check"></i></span></div>
+          <div class="pro-window-row"><i class="fa-solid fa-sliders"></i> Own Rules<span class="check-ok"><i class="fa-solid fa-check"></i></span></div>
+          <div class="pro-window-row"><i class="fa-solid fa-eye"></i> Auto Monitoring<span class="check-ok"><i class="fa-solid fa-check"></i></span></div>
+          <div class="pro-window-row"><i class="fa-solid fa-clone"></i> Duplicates Finder<span class="check-ok"><i class="fa-solid fa-check"></i></span></div>
+          <div class="pro-window-row"><i class="fa-solid fa-magnifying-glass"></i> Investigate<span class="check-ok"><i class="fa-solid fa-check"></i></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="pricing-card">
+        <div class="pricing-head">
+          <span class="pricing-kicker">HORGANIZER PRO</span>
+          <div class="pricing-amount"><span class="amount">50</span><span class="currency">Kč</span></div>
+          <span class="pricing-type">ONE-TIME PURCHASE</span>
+        </div>
+        <ul class="pricing-list">
+          <li><i class="fa-solid fa-check"></i> Organizing — 15 built-in file categories</li>
+          <li><i class="fa-solid fa-check"></i> Own Rules — custom extension → folder rules</li>
+          <li><i class="fa-solid fa-check"></i> Auto Monitoring — background folder watchdog</li>
+          <li><i class="fa-solid fa-check"></i> Duplicates Finder — SHA-256 verified scanning</li>
+          <li><i class="fa-solid fa-check"></i> Investigate — full metadata &amp; duplicate lookup</li>
+          <li><i class="fa-solid fa-check"></i> 10 interface languages</li>
+          <li><i class="fa-solid fa-check"></i> No subscription, no recurring fee</li>
+        </ul>
+        <button class="btn btn-primary btn-large btn-full" id="openPurchaseModal">Get Horganizer PRO</button>
+        <p class="pricing-note">Payment and activation will be connected separately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY HORGANIZER ============ -->
+  <section class="why">
+    <div class="container">
+      <p class="section-eyebrow">Why Horganizer</p>
+      <h2 class="section-title">Small, direct, and built around your own files.</h2>
+      <div class="why-grid">
+        <div class="why-card"><i class="fa-solid fa-desktop"></i><h4>Local desktop app</h4><p>Your files stay on your machine. Horganizer doesn't upload anything.</p></div>
+        <div class="why-card"><i class="fa-solid fa-sliders"></i><h4>Customizable</h4><p>Built-in categories cover most files; your own rules cover the rest.</p></div>
+        <div class="why-card"><i class="fa-solid fa-bolt"></i><h4>Automatic</h4><p>Once monitoring is on, new files get organized without you touching anything.</p></div>
+        <div class="why-card"><i class="fa-solid fa-eye"></i><h4>Transparent</h4><p>Every action is visible in the interface, and every organized file can be restored.</p></div>
+        <div class="why-card"><i class="fa-solid fa-language"></i><h4>10 languages</h4><p>English, Čeština, 中文, Español, हिन्दी, Português, Français, Deutsch, 日本語, 한국어.</p></div>
+        <div class="why-card"><i class="fa-solid fa-cube"></i><h4>Simple by design</h4><p>Five tabs. No accounts, no dashboards, no clutter.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title">Questions people actually ask.</h2>
+
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-q">What is Horganizer? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a"><p>Horganizer is a Windows desktop application that organizes your Downloads folder
+            (or any folder you choose) into categories, watches folders for new files, finds duplicates, and
+            lets you inspect individual files in detail.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What does Horganizer PRO include? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a"><p>All five tools: Organizing, Own Rules, Auto Monitoring, Duplicates Finder and
+            Investigate. There is no separate free tier feature list — PRO is the full application.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can I create my own rules? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a"><p>Yes. In the Own Rules tab you define a name, one or more extensions and a
+            destination folder. Rules are checked in table order, and the first enabled match wins.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What does Auto Monitoring do? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a"><p>It watches folders you add in the background. When a new file is created or
+            moved into a watched folder, Horganizer waits until the file has finished writing, then organizes
+            it automatically using your categories and rules.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is Investigate? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a"><p>Investigate lets you pick a single file and see its name, size, type, created
+            and modified dates, SHA-256 hash, a location history trail, and whether an identical copy of it
+            exists elsewhere.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How does Duplicates Finder work? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a"><p>You choose folders to scan. Horganizer groups files by size first, then hashes
+            same-size files with SHA-256 to confirm genuine duplicates, and groups them for review before you
+            delete anything.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is PRO a subscription? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a"><p>No. Horganizer PRO is a one-time purchase of 50 Kč. There is no recurring
+            billing.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is the purchase system available yet? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a"><p>Not yet. The "Get Horganizer PRO" button currently opens a preview of the
+            checkout — no payment is processed and no account is created. Payment and activation will be
+            connected separately.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Your files. Your rules. Your system.</h2>
+      <a href="#pricing" class="btn btn-primary btn-large">Get Horganizer PRO <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 7.5C3 6.12 4.12 5 5.5 5h4.4c.6 0 1.16.28 1.53.75L12.7 7.5H18.5C19.88 7.5 21 8.62 21 10v7c0 1.38-1.12 2.5-2.5 2.5h-13C4.12 19.5 3 18.38 3 17V7.5z" fill="#3B9CCB"/></svg>
+      </span>
+      <span>Horganizer</span>
+    </div>
+    <nav class="footer-links">
+      <a href="#top">Horganizer</a>
+      <a href="#pro">Horganizer PRO</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <div class="footer-copy">© 2026 Horganizer</div>
+  </div>
+</footer>
+
+<!-- ============ PURCHASE MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-kicker">HORGANIZER PRO — CHECKOUT PREVIEW</div>
+    <h3 id="modalTitle">Get Horganizer PRO</h3>
+    <div class="modal-price"><span class="amount">50</span><span class="currency">Kč</span><span class="modal-price-type">one-time</span></div>
+    <ul class="modal-list">
+      <li><i class="fa-solid fa-check"></i> Organizing, Own Rules, Auto Monitoring, Duplicates Finder, Investigate</li>
+      <li><i class="fa-solid fa-check"></i> No subscription</li>
+      <li><i class="fa-solid fa-check"></i> Windows desktop license</li>
+    </ul>
+    <div class="modal-notice">
+      <i class="fa-solid fa-circle-info"></i>
+      <span>This purchase flow is a preview only. Payment processing and license activation are not
+        connected yet — no charge will be made and no account is created.</span>
+    </div>
+    <button class="btn btn-ghost btn-full" id="modalCloseBtn">Close</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
